@@ -1,4 +1,10 @@
 {
-  "games": {},
+  "games": {
+    "1":  { "hg": 4 , "ag": 5 },
+    "2":  { "hg": 7 , "ag": 4 },
+
+  },
+  "gameOverrides": {}
+}
   "gameOverrides": {}
 }
