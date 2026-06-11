@@ -17,7 +17,7 @@
 }
 body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--text-dark);min-height:100vh}
 
-/* INTRO */
+/* ── INTRO ── */
 #intro-overlay{position:fixed;inset:0;z-index:9999;background:var(--g900);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;opacity:1;transition:opacity .8s ease}
 #intro-overlay.fade-out{opacity:0;pointer-events:none}
 #intro-overlay.gone{display:none}
@@ -32,12 +32,12 @@ body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--tex
 .intro-bar-wrap{width:100%;height:3px;background:rgba(255,255,255,.15);border-radius:2px;margin-bottom:.75rem;overflow:hidden}
 .intro-bar{height:100%;width:0%;background:var(--gold);transition:width linear}
 .intro-actions{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
-.intro-enter{background:var(--gold);color:var(--g900);border:none;padding:.5rem 1.5rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.95rem;text-transform:uppercase;letter-spacing:.5px;cursor:pointer}
+.intro-enter{background:var(--gold);color:var(--g900);border:none;padding:.5rem 1.5rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.95rem;text-transform:uppercase;cursor:pointer}
 .intro-enter:hover{background:var(--gold-dark)}
 .intro-skip{background:transparent;color:var(--g300);border:1px solid var(--g600);padding:.5rem 1.2rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.88rem;text-transform:uppercase;cursor:pointer}
 .intro-skip:hover{background:var(--g700);color:white}
 
-/* HEADER */
+/* ── HEADER ── */
 .header{background:var(--g800)}
 .header-inner{max-width:960px;margin:0 auto;padding:1.5rem 1.5rem 1.25rem;display:flex;align-items:center;gap:1.25rem}
 .header-logo{width:76px;height:76px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:3px solid var(--gold);overflow:hidden;padding:6px}
@@ -49,50 +49,50 @@ body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--tex
 .header-stripe-inner{max-width:960px;margin:0 auto;padding:.45rem 1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap}
 .header-stripe-inner span{font-family:'Barlow Condensed',sans-serif;font-size:.88rem;font-weight:700;color:var(--g800);text-transform:uppercase;letter-spacing:.5px}
 
-/* NAV */
+/* ── NAV ── */
 nav{background:var(--white);border-bottom:3px solid var(--g500);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,100,40,.08)}
 .nav-inner{max-width:960px;margin:0 auto;display:flex;overflow-x:auto}
-.nav-btn{flex:1;min-width:80px;padding:.7rem .4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;border:none;background:transparent;cursor:pointer;color:var(--text-muted);border-bottom:3px solid transparent;margin-bottom:-3px;transition:all .15s;white-space:nowrap}
+.nav-btn{flex:1;min-width:72px;padding:.7rem .3rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;text-transform:uppercase;letter-spacing:.4px;border:none;background:transparent;cursor:pointer;color:var(--text-muted);border-bottom:3px solid transparent;margin-bottom:-3px;transition:all .15s;white-space:nowrap}
 .nav-btn.active{color:var(--g800);border-bottom-color:var(--gold);background:var(--g50)}
 .nav-btn:hover:not(.active){background:var(--light);color:var(--g700)}
 
-/* MAIN */
+/* ── MAIN ── */
 .main{max-width:960px;margin:0 auto;padding:1.5rem}
 .section{display:none}.section.active{display:block}
 .section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.35rem;text-transform:uppercase;color:var(--g800);letter-spacing:1px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
 .section-title::after{content:'';flex:1;height:2px;background:var(--gold)}
 .phase-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:1.25rem 0 .5rem;border-left:3px solid var(--g400);padding-left:8px}
 
-/* GAME CARDS */
-.game-card{background:var(--white);border:1px solid var(--light);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:.45rem;display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:.75rem;border-left:4px solid var(--g400)}
+/* ── GAME CARDS ── */
+.game-card{background:var(--white);border:1px solid var(--light);border-radius:var(--radius);padding:.85rem 1.1rem;margin-bottom:.5rem;display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:.85rem;border-left:4px solid var(--g400)}
 .game-card.played{border-left-color:var(--g600)}
 .game-card.final-game{border-left-color:var(--gold-dark)}
-.game-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.72rem;color:var(--text-muted);text-align:center;background:var(--g50);border-radius:4px;padding:2px 4px;line-height:1.3}
-.game-info{display:flex;flex-direction:column;gap:2px}
-.game-teams{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text-dark)}
-.game-when{font-size:.76rem;color:var(--text-muted)}
-.game-result{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.25rem;color:var(--g700);text-align:right;min-width:56px;white-space:nowrap}
-.game-result.tbd{color:var(--text-muted);font-size:.82rem;font-weight:500}
+.game-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;color:var(--text-muted);text-align:center;background:var(--g50);border-radius:4px;padding:3px 4px;line-height:1.3}
+.game-info{display:flex;flex-direction:column;gap:3px}
+.game-teams{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;color:var(--text-dark)}
+.game-when{font-size:.78rem;color:var(--text-muted)}
+.game-result{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.6rem;color:var(--g700);text-align:right;min-width:70px;white-space:nowrap;letter-spacing:1px}
+.game-result.tbd{color:var(--text-muted);font-size:.85rem;font-weight:500;letter-spacing:0}
 
-/* STANDINGS */
+/* ── STANDINGS ── */
 .standings-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--light)}
 .standings-table thead tr{background:var(--g800)}
-.standings-table thead th{padding:.55rem .75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--white);text-align:center}
+.standings-table thead th{padding:.6rem .75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--white);text-align:center}
 .standings-table thead th:first-child{text-align:left}
 .standings-table tbody tr{border-bottom:1px solid var(--light);transition:background .1s}
 .standings-table tbody tr:hover{background:var(--g50)}
 .standings-table tbody tr:nth-child(1){background:#fffce6}
 .standings-table tbody tr:nth-child(2){background:var(--g50)}
-.standings-table tbody td{padding:.55rem .75rem;font-size:.87rem;text-align:center}
+.standings-table tbody td{padding:.6rem .75rem;font-size:.88rem;text-align:center}
 .standings-table tbody td:first-child{text-align:left;font-weight:600}
 .pos-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.78rem;margin-right:5px;flex-shrink:0}
 .pos-1{background:var(--gold);color:var(--g800)}
 .pos-2{background:var(--g500);color:white}
 .pos-3{background:var(--g300);color:var(--g800)}
 .pos-4,.pos-5{background:var(--light);color:var(--text-muted)}
-.pts{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;color:var(--g700)}
+.pts{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;color:var(--g700)}
 
-/* TEAMS */
+/* ── TEAMS ── */
 .team-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.25rem}
 .team-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;padding:.4rem .9rem;border-radius:20px;border:2px solid var(--g400);background:transparent;color:var(--g700);cursor:pointer;transition:all .15s}
 .team-tab.active{background:var(--g700);color:white;border-color:var(--g700)}
@@ -105,7 +105,36 @@ nav{background:var(--white);border-bottom:3px solid var(--g500);position:sticky;
 .player-number{position:absolute;top:6px;left:6px;background:var(--g800);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.85rem;padding:1px 7px;border-radius:4px;line-height:1.4}
 .player-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;color:var(--text-dark);padding:.5rem .4rem .55rem;line-height:1.2}
 
-/* ADMIN */
+/* ── REGULAMENTO ── */
+.reg-section{margin-bottom:1.75rem}
+.reg-section h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;text-transform:uppercase;color:var(--g800);letter-spacing:.5px;margin-bottom:.6rem;padding-bottom:.35rem;border-bottom:1px solid var(--light)}
+.reg-section p,.reg-section li{font-size:.9rem;color:var(--text-dark);line-height:1.65;margin-bottom:.35rem}
+.reg-section ul,.reg-section ol{padding-left:1.4rem;margin-bottom:.4rem}
+.reg-section li{margin-bottom:.2rem}
+.reg-section strong{color:var(--g800)}
+.reg-note{background:var(--g50);border:1px solid var(--g200);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-mid);margin-top:.5rem;line-height:1.6}
+
+/* handicap table */
+.hcp-wrap{overflow-x:auto;margin:.5rem 0 .25rem}
+.hcp-table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:640px}
+.hcp-table th{background:var(--g800);color:white;padding:.45rem .6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-align:center;font-size:.78rem;text-transform:uppercase;letter-spacing:.3px}
+.hcp-table th:first-child{text-align:left;min-width:70px}
+.hcp-table td{border:1px solid var(--light);padding:.45rem .6rem;vertical-align:top;line-height:1.45;color:var(--text-dark)}
+.hcp-table td:first-child{background:var(--g50);font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--g800);text-align:center;vertical-align:middle}
+.hcp-table td.diag{background:var(--light);color:var(--text-muted);text-align:center;vertical-align:middle;font-style:italic}
+.hcp-table tr:nth-child(even) td:not(:first-child):not(.diag){background:#f9fdf9}
+
+/* cal table */
+.cal-table{width:100%;border-collapse:collapse;font-size:.87rem}
+.cal-table thead tr{background:var(--g800)}
+.cal-table thead th{padding:.5rem .7rem;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;text-align:left}
+.cal-table tbody tr{border-bottom:1px solid var(--light)}
+.cal-table tbody tr:nth-child(even){background:var(--g50)}
+.cal-table tbody tr.world-cup{background:#fff8e1}
+.cal-table tbody td{padding:.45rem .7rem;vertical-align:middle}
+.cal-table .wc-badge{display:inline-block;background:var(--gold);color:var(--g900);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.72rem;padding:1px 6px;border-radius:3px;margin-left:4px}
+
+/* ── ADMIN ── */
 .admin-gate{text-align:center;padding:3rem 1rem;max-width:360px;margin:0 auto}
 .admin-gate h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:var(--g800);margin-bottom:.75rem;text-transform:uppercase}
 .admin-gate input{width:100%;padding:.55rem .75rem;border:1px solid var(--light);border-radius:var(--radius);font-size:.9rem;display:block;margin:.4rem 0}
@@ -117,26 +146,20 @@ nav{background:var(--white);border-bottom:3px solid var(--g500);position:sticky;
 .edit-card-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;color:var(--g800)}
 .edit-card-label small{display:block;font-family:'Barlow',sans-serif;font-weight:400;font-size:.76rem;color:var(--text-muted);margin-top:1px}
 .edit-toggle{font-size:.75rem;color:var(--g600);border:1px solid var(--g300);background:var(--g50);padding:2px 8px;border-radius:4px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;white-space:nowrap}
-.edit-toggle:hover{background:var(--light)}
 .edit-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .score-inputs{display:flex;align-items:center;gap:.4rem}
-.score-inputs input[type=number]{width:52px;padding:.3rem .4rem;border:1px solid var(--light);border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;color:var(--g700)}
+.score-inputs input[type=number]{width:56px;padding:.35rem .4rem;border:1px solid var(--light);border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-align:center;color:var(--g700)}
 .score-inputs span{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--text-muted);font-size:1rem}
 .meta-edit{display:none;margin-top:.6rem;padding-top:.6rem;border-top:1px dashed var(--light)}
 .meta-edit.open{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.5rem;align-items:end}
-.meta-edit label{font-size:.72rem;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.3px;display:block;margin-bottom:2px}
+.meta-edit label{font-size:.72rem;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;display:block;margin-bottom:2px}
 .meta-edit input[type=text]{width:100%;padding:.3rem .5rem;border:1px solid var(--light);border-radius:4px;font-size:.85rem}
-.btn-row{display:flex;gap:.4rem;margin-top:.65rem;flex-wrap:wrap}
+.btn-row{display:flex;gap:.4rem;flex-wrap:wrap}
 .save-btn{background:var(--g700);color:white;border:none;padding:.35rem 1rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;cursor:pointer}
 .save-btn:hover{background:var(--g800)}
 .clear-btn{background:transparent;color:var(--red);border:1px solid var(--red);padding:.35rem .9rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;cursor:pointer}
 .clear-btn:hover{background:#fff0f0}
 .save-meta-btn{background:var(--g500);color:white;border:none;padding:.35rem 1rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;text-transform:uppercase;cursor:pointer}
-.save-meta-btn:hover{background:var(--g600)}
-
-/* LOADING */
-.loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.9rem}
-.error-msg{background:#fff0f0;border:1px solid #f5c6c6;border-radius:var(--radius);padding:.75rem 1rem;color:var(--red);font-size:.85rem;margin-bottom:1rem}
 
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--g800);color:white;padding:.55rem 1.2rem;border-radius:var(--radius);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase;opacity:0;transition:opacity .3s;z-index:9998;pointer-events:none;border-left:4px solid var(--gold)}
 .toast.show{opacity:1}
@@ -198,6 +221,7 @@ footer img{width:32px;vertical-align:middle;margin-right:8px;opacity:.5}
     <button class="nav-btn" onclick="showSection('resultados',this)">Resultados</button>
     <button class="nav-btn" onclick="showSection('classificacao',this)">Classificação</button>
     <button class="nav-btn" onclick="showSection('equipas',this)">Equipas</button>
+    <button class="nav-btn" onclick="showSection('regulamento',this)">Regulamento</button>
     <button class="nav-btn" onclick="showSection('admin',this)">Gestão &#9881;</button>
   </div>
 </nav>
@@ -243,6 +267,201 @@ footer img{width:32px;vertical-align:middle;margin-right:8px;opacity:.5}
     <div class="players-grid" id="players-grid"></div>
   </div>
 
+  <!-- REGULAMENTO -->
+  <div class="section" id="sec-regulamento">
+    <div class="section-title">Regulamento Oficial</div>
+
+    <div class="reg-section">
+      <h2>1. Nome</h2>
+      <p>I Torneio Inter-Escalões de Futsal &ndash; Dínamo Clube Estação 2026</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>2. Organização e Objetivos</h2>
+      <p>O Torneio Inter-Escalões é uma iniciativa interna promovida pela Secção de Futsal do Dínamo Clube Estação. O evento tem como objetivos fundamentais fomentar o espírito de clube, reforçar os laços de união e confraternização entre atletas, técnicos e famílias de diferentes escalões, bem como desenvolver competências técnico-táticas sob cenários de restrição.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>3. Local do Torneio</h2>
+      <p>Pavilhão do Colégio Imaculada Conceição (pavilhão e/ou espaço habitual de treino).</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>4. Datas</h2>
+      <ul>
+        <li><strong>Fase Regular:</strong> 11 de junho a 25 de junho de 2026</li>
+        <li><strong>Fase Final</strong> (meias-finais e final): 26 de junho de 2026</li>
+      </ul>
+    </div>
+
+    <div class="reg-section">
+      <h2>5. Escalões Participantes</h2>
+      <p>Sub-11A &middot; Sub-11B &middot; Sub-13 &middot; Sub-15 &middot; Sub-19</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>6. Regras Gerais</h2>
+      <p>O torneio é jogado de acordo com as regras do futsal da Federação Portuguesa de Futebol, com as adaptações previstas neste regulamento.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>7. Constituição das Equipas</h2>
+      <ul>
+        <li>Cada equipa é composta pelos elementos inscritos em cada escalão do clube.</li>
+        <li>Cada atleta pode jogar apenas pelo seu escalão.</li>
+        <li>É obrigatória a presença de pelo menos 5 jogadores para que o jogo se realize.</li>
+      </ul>
+    </div>
+
+    <div class="reg-section">
+      <h2>8. Duração dos Jogos</h2>
+      <ul>
+        <li>Cada jogo tem a duração total de 55 minutos:</li>
+        <li>2 partes de 25 minutos, com tempo corrido;</li>
+        <li>5 minutos de intervalo, sem regresso ao balneário.</li>
+        <li>O último minuto de cada parte é cronometrado.</li>
+      </ul>
+    </div>
+
+    <div class="reg-section">
+      <h2>9. Sistema Competitivo</h2>
+      <p><strong>a) Fase Regular &ndash; Todos Contra Todos</strong><br>
+      Os 5 escalões disputam uma fase de liga a uma volta (todos contra todos), totalizando 10 jogos.<br>
+      Pontuação: Vitória = 3 pts &middot; Empate = 1 pt &middot; Derrota = 0 pts.</p>
+      <p style="margin-top:.6rem"><strong>b) Critérios de Desempate</strong></p>
+      <ol>
+        <li>Resultado do confronto direto entre as equipas empatadas;</li>
+        <li>Diferença de golos nos jogos entre as equipas empatadas;</li>
+        <li>Diferença de golos global no torneio;</li>
+        <li>Maior número de golos marcados;</li>
+        <li>Menor média de idades dos atletas inscritos.</li>
+      </ol>
+      <p style="margin-top:.6rem"><strong>c) Fase Final</strong><br>
+      Os 4 primeiros classificados da fase regular apuram-se:</p>
+      <ul>
+        <li>Meia-Final 1: 1.º classificado vs 4.º classificado</li>
+        <li>Meia-Final 2: 2.º classificado vs 3.º classificado</li>
+        <li>Final: Vencedor MF1 vs Vencedor MF2</li>
+      </ul>
+      <p style="margin-top:.4rem">O desempate nas fases eliminatórias e na final é resolvido por série de 5 grandes penalidades. Se persistir empate, marcação alternada até haver vencedor.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>10. Sistema de Condicionantes (Handicap)</h2>
+      <p style="margin-bottom:.75rem">Com o objetivo de equilibrar a competição, são aplicadas condicionantes às equipas mais velhas em cada confronto:</p>
+      <div class="hcp-wrap">
+        <table class="hcp-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>vs Sub-11A</th>
+              <th>vs Sub-11B</th>
+              <th>vs Sub-13</th>
+              <th>vs Sub-15</th>
+              <th>vs Sub-19</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sub-11A</td>
+              <td class="diag">—</td>
+              <td>Jogo Livre</td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro.<br><em>Golo Sub-11 = 2</em></td>
+              <td>Pé contrário + 3 toques + sem remate fora da área + inicia 0-4.<br><em>Golo Sub-11 = 3</em></td>
+              <td>Não pode correr + pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-5.<br><em>Golo Sub-11 = 4</em></td>
+            </tr>
+            <tr>
+              <td>Sub-11B</td>
+              <td>Jogo Livre</td>
+              <td class="diag">—</td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro.<br><em>Golo Sub-11 = 2</em></td>
+              <td>Pé contrário + 3 toques + sem remate fora da área + inicia 0-5.<br><em>Golo Sub-11 = 3</em></td>
+              <td>Não pode correr + pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-6.<br><em>Golo Sub-11 = 4</em></td>
+            </tr>
+            <tr>
+              <td>Sub-13</td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro.<br><em>Golo Sub-11 = 2</em></td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro.<br><em>Golo Sub-11 = 2</em></td>
+              <td class="diag">—</td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro + 3 toques + inicia 0-3.<br><em>Golo Sub-13 = 2</em></td>
+              <td>Pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-4.<br><em>Golo Sub-13 = 3</em></td>
+            </tr>
+            <tr>
+              <td>Sub-15</td>
+              <td>Pé contrário + 3 toques + sem remate fora da área + inicia 0-4.<br><em>Golo Sub-11 = 3</em></td>
+              <td>Pé contrário + 3 toques + sem remate fora da área + inicia 0-5.<br><em>Golo Sub-11 = 3</em></td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro + 3 toques + inicia 0-3.<br><em>Golo Sub-13 = 2</em></td>
+              <td class="diag">—</td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro + inicia 0-3.<br><em>Golo Sub-15 = 2</em></td>
+            </tr>
+            <tr>
+              <td>Sub-19</td>
+              <td>Não pode correr + pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-5.<br><em>Golo Sub-11 = 4</em></td>
+              <td>Não pode correr + pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-6.<br><em>Golo Sub-11 = 4</em></td>
+              <td>Pé contrário + 3 toques + sem remate forte/fora da área + inicia 0-4.<br><em>Golo Sub-13 = 3</em></td>
+              <td>Se recebe c/ um pé tem de passar/rematar c/ o outro + inicia 0-3.<br><em>Golo Sub-15 = 2</em></td>
+              <td class="diag">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="reg-note">
+        <strong>Notas de aplicação:</strong><br>
+        &bull; <strong>Pé contrário</strong> &ndash; todos os toques devem ser efetuados com o pé não dominante, incluindo passes, condução e remate.<br>
+        &bull; <strong>Receber com um pé tem de passar/rematar com o outro</strong> &ndash; não pode passar ou rematar de primeira (nunca).<br>
+        &bull; <strong>Sem remate fora da área</strong> &ndash; o golo só é válido se o remate for dentro da área de grande penalidade.<br>
+        &bull; <strong>Não pode correr</strong> &ndash; considera-se corrida quando ambos os pés deixam alternadamente o solo em deslocação rápida. O árbitro pode anular golos em infração.<br>
+        &bull; <strong>Sem remate forte</strong> &ndash; remate com a zona interior do pé, sem impulsão ou balanço completo da perna, dentro da área.<br>
+        &bull; Em caso de dúvida, prevalece a decisão do árbitro.
+      </div>
+    </div>
+
+    <div class="reg-section">
+      <h2>11. Calendário de Jogos</h2>
+      <div style="overflow-x:auto">
+        <table class="cal-table">
+          <thead><tr><th>Jogo</th><th>Data</th><th>Hora</th><th>Equipa A</th><th>Equipa B</th></tr></thead>
+          <tbody>
+            <tr><td colspan="5" style="background:var(--g50);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);padding:.4rem .7rem">Fase Regular</td></tr>
+            <tr><td>1</td><td>11/06 (Qui)</td><td>18:30</td><td>Sub-11A</td><td>Sub-13</td></tr>
+            <tr><td>2</td><td>11/06 (Qui)</td><td>19:30</td><td>Sub-15</td><td>Sub-19</td></tr>
+            <tr><td>3</td><td>12/06 (Sex)</td><td>18:30</td><td>Sub-11B</td><td>Sub-15</td></tr>
+            <tr><td>4</td><td>12/06 (Sex)</td><td>19:30</td><td>Sub-13</td><td>Sub-19</td></tr>
+            <tr><td>5</td><td>15/06 (Seg)</td><td>19:30</td><td>Sub-11A</td><td>Sub-19</td></tr>
+            <tr><td>6</td><td>16/06 (Ter)</td><td>18:30</td><td>Sub-11B</td><td>Sub-13</td></tr>
+            <tr class="world-cup"><td colspan="5">&#127942; 17/06 (Qua) 18:00 &mdash; Portugal vs DR Congo <span class="wc-badge">Mundial 2026</span></td></tr>
+            <tr><td>7</td><td>18/06 (Qui)</td><td>18:30</td><td>Sub-11A</td><td>Sub-15</td></tr>
+            <tr><td>8</td><td>19/06 (Sex)</td><td>18:30</td><td>Sub-11B</td><td>Sub-19</td></tr>
+            <tr class="world-cup"><td colspan="5">&#127942; 23/06 (Ter) 18:00 &mdash; Portugal vs Uzbequistão <span class="wc-badge">Mundial 2026</span></td></tr>
+            <tr><td>9</td><td>24/06 (Qua)</td><td>19:30</td><td>Sub-13</td><td>Sub-15</td></tr>
+            <tr><td>10</td><td>25/06 (Qui)</td><td>18:30</td><td>Sub-11A</td><td>Sub-11B</td></tr>
+            <tr><td colspan="5" style="background:var(--g50);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);padding:.4rem .7rem">Fase Final &mdash; 26 de Junho</td></tr>
+            <tr><td>MF1</td><td>26/06 (Sex)</td><td>18:30</td><td>1.º Classif.</td><td>4.º Classif.</td></tr>
+            <tr><td>MF2</td><td>26/06 (Sex)</td><td>19:30</td><td>2.º Classif.</td><td>3.º Classif.</td></tr>
+            <tr><td>F</td><td>26/06 (Sex)</td><td>20:30</td><td>Venc. MF1</td><td>Venc. MF2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.76rem;color:var(--text-muted);margin-top:.5rem">Os horários privilegiam os escalões mais novos quando defrontam escalões mais velhos, respeitando os horários de treino estabelecidos.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>12. Proteção e Integridade Física</h2>
+      <p>Sendo um torneio de caráter festivo e formativo, cargas de ombro agressivas, carrinhos ou desarmes com contacto físico excessivo de um escalão mais velho sobre um mais novo serão punidas imediatamente como falta direta. Qualquer entrada considerada imprudente poderá resultar em exclusão ou exclusão temporária de 2 minutos.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>13. Comportamento</h2>
+      <p>Este torneio pretende ser um exemplo de respeito, fair-play e camaradagem entre todos os escalões do clube. Cada treinador é responsável pelo comportamento dos seus atletas dentro e fora do recinto de jogo.</p>
+    </div>
+
+    <div class="reg-section">
+      <h2>14. Casos Omissos</h2>
+      <p>Todos os casos não previstos neste regulamento serão decididos de forma soberana e definitiva pela Coordenação de Futsal do Dínamo Clube Estação.</p>
+      <p style="margin-top:.75rem;font-style:italic;color:var(--text-muted)">Junho de 2026 &middot; A Coordenação do Futsal &middot; Dínamo Clube Estação</p>
+    </div>
+  </div>
+
   <!-- ADMIN -->
   <div class="section" id="sec-admin">
     <div class="section-title">Gestão</div>
@@ -255,19 +474,20 @@ footer img{width:32px;vertical-align:middle;margin-right:8px;opacity:.5}
     </div>
     <div class="admin-panel" id="admin-panel">
       <div class="admin-note">
-        &#9998; Regista resultados aqui. Para alterar data, hora ou equipas de um jogo, clica em <strong>Editar jogo</strong>.<br>
-        <strong>Nota:</strong> As alterações ficam guardadas em <code>results.json</code> — faz download e substitui o ficheiro no servidor.
+        &#9998; Regista resultados e edita jogos se necessário. Clica em <strong>&#9729; Publicar</strong> para guardar no servidor.
       </div>
-      <div id="admin-error" style="display:none"></div>
       <div class="phase-label">Fase Regular</div>
       <div id="edit-regular"></div>
       <div class="phase-label" style="margin-top:1.25rem">Fase Final</div>
       <div id="edit-final"></div>
-      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--light)">
-        <button onclick="downloadJSON()" style="background:var(--g800);color:white;border:none;padding:.5rem 1.25rem;border-radius:var(--radius);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase;cursor:pointer">
-          &#11015; Download results.json
+      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--light);display:flex;gap:.75rem;align-items:center;flex-wrap:wrap">
+        <button onclick="saveToServer()" id="save-server-btn" style="background:var(--g700);color:white;border:none;padding:.5rem 1.25rem;border-radius:var(--radius);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase;cursor:pointer">
+          &#9729; Publicar alterações
         </button>
-        <p style="font-size:.76rem;color:var(--text-muted);margin-top:.5rem">Descarrega e substitui o ficheiro no servidor para publicar as alterações.</p>
+        <button onclick="downloadJSON()" style="background:transparent;color:var(--g700);border:1px solid var(--g400);padding:.5rem 1.1rem;border-radius:var(--radius);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase;cursor:pointer">
+          &#11015; Download JSON
+        </button>
+        <p id="save-status" style="font-size:.8rem;color:var(--text-muted);margin:0"></p>
       </div>
     </div>
   </div>
@@ -281,10 +501,8 @@ footer img{width:32px;vertical-align:middle;margin-right:8px;opacity:.5}
 
 <div class="toast" id="toast"></div>
 
-<!-- EXTERNAL DATA -->
 <script src="players.js"></script>
 <script>
-// ── DEFAULT GAMES ─────────────────────────────────────────────────────────
 const DEFAULT_GAMES = [
   {id:1,  phase:'regular', date:'11/06 (Qui)', time:'18:30', home:'Sub-11A', away:'Sub-13'},
   {id:2,  phase:'regular', date:'11/06 (Qui)', time:'19:30', home:'Sub-15',  away:'Sub-19'},
@@ -303,11 +521,9 @@ const DEFAULT_GAMES = [
 const TEAMS = ['Sub-11A','Sub-11B','Sub-13','Sub-15','Sub-19'];
 const ADMIN_HASH = 'd6116bc321334fb16bb556567a4f4c0cec15af5dd9654a03c63872f3a1c849f8';
 
-// ── STATE ────────────────────────────────────────────────────────────────
-let state = { games: {}, gameOverrides: {} };
+let state = { games:{}, gameOverrides:{} };
 let activeTeam = TEAMS[0];
 
-// ── LOAD results.json ────────────────────────────────────────────────────
 async function loadData() {
   try {
     const res = await fetch('results.json?t=' + Date.now());
@@ -316,161 +532,136 @@ async function loadData() {
     if (!state.games) state.games = {};
     if (!state.gameOverrides) state.gameOverrides = {};
   } catch(e) {
-    console.warn('Could not load results.json, using empty state.', e);
-    state = { games: {}, gameOverrides: {} };
+    state = { games:{}, gameOverrides:{} };
   }
   renderAll();
 }
 
-// ── MERGE GAMES WITH OVERRIDES ───────────────────────────────────────────
 function getGames() {
   return DEFAULT_GAMES.map(g => {
     const ov = state.gameOverrides[String(g.id)];
-    return ov ? { ...g, ...ov } : { ...g };
+    return ov ? {...g,...ov} : {...g};
   });
 }
 
-// ── STANDINGS ────────────────────────────────────────────────────────────
 function calcStandings() {
-  const games = getGames();
-  const st = {};
-  TEAMS.forEach(t => st[t] = {j:0,v:0,e:0,d:0,gm:0,gs:0,pts:0});
-  games.filter(g => g.phase === 'regular').forEach(g => {
-    const r = state.games[String(g.id)];
-    if (!r) return;
-    const h = g.home, a = g.away;
-    if (!st[h] || !st[a]) return;
+  const games = getGames(), st = {};
+  TEAMS.forEach(t => st[t]={j:0,v:0,e:0,d:0,gm:0,gs:0,pts:0});
+  games.filter(g => g.phase==='regular').forEach(g => {
+    const r = state.games[String(g.id)]; if(!r) return;
+    const h=g.home, a=g.away;
+    if(!st[h]||!st[a]) return;
     st[h].j++; st[a].j++;
-    st[h].gm += r.hg; st[h].gs += r.ag;
-    st[a].gm += r.ag; st[a].gs += r.hg;
-    if (r.hg > r.ag)      { st[h].v++; st[h].pts += 3; st[a].d++; }
-    else if (r.hg < r.ag) { st[a].v++; st[a].pts += 3; st[h].d++; }
-    else                  { st[h].e++; st[h].pts++; st[a].e++; st[a].pts++; }
+    st[h].gm+=r.hg; st[h].gs+=r.ag;
+    st[a].gm+=r.ag; st[a].gs+=r.hg;
+    if(r.hg>r.ag){st[h].v++;st[h].pts+=3;st[a].d++;}
+    else if(r.hg<r.ag){st[a].v++;st[a].pts+=3;st[h].d++;}
+    else{st[h].e++;st[h].pts++;st[a].e++;st[a].pts++;}
   });
-  return TEAMS.map(t => ({name:t, ...st[t], dg: st[t].gm - st[t].gs}))
-    .sort((a,b) => b.pts - a.pts || b.dg - a.dg || b.gm - a.gm);
+  return TEAMS.map(t=>({name:t,...st[t],dg:st[t].gm-st[t].gs}))
+    .sort((a,b)=>b.pts-a.pts||b.dg-a.dg||b.gm-a.gm);
 }
 
-// ── RENDER AGENDA ────────────────────────────────────────────────────────
+function gameCard(g, phase) {
+  const r = state.games[String(g.id)];
+  const played = r !== undefined;
+  const lbl = g.label ? g.label : 'J'+g.id;
+  return `<div class="game-card${played?' played':''}${phase==='final'?' final-game':''}">
+    <div class="game-num">${lbl}</div>
+    <div class="game-info">
+      <div class="game-teams">${g.home} <span style="color:var(--text-muted);font-weight:400">vs</span> ${g.away}</div>
+      <div class="game-when">${g.date}${played?' &middot; Resultado final':' &middot; '+g.time}</div>
+    </div>
+    ${played?`<div class="game-result">${r.hg}&ndash;${r.ag}</div>`:`<div class="game-result tbd">${g.time}</div>`}
+  </div>`;
+}
+
 function renderAgenda() {
   const games = getGames();
   ['regular','final'].forEach(phase => {
-    const el = document.getElementById('agenda-' + phase);
-    if (!el) return;
-    el.innerHTML = games.filter(g => g.phase === phase).map(g => {
-      const r = state.games[String(g.id)];
-      const played = r !== undefined;
-      const lbl = g.label ? g.label : 'J' + g.id;
-      return `<div class="game-card${played?' played':''}${g.phase==='final'?' final-game':''}">
-        <div class="game-num">${lbl}</div>
-        <div class="game-info">
-          <div class="game-teams">${g.home} <span style="color:var(--text-muted);font-weight:400">vs</span> ${g.away}</div>
-          <div class="game-when">${g.date}${played ? ' &middot; Resultado final' : ' &middot; ' + g.time}</div>
-        </div>
-        ${played ? `<div class="game-result">${r.hg}&ndash;${r.ag}</div>` : `<div class="game-result tbd">${g.time}</div>`}
-      </div>`;
-    }).join('');
+    const el = document.getElementById('agenda-'+phase); if(!el) return;
+    el.innerHTML = games.filter(g=>g.phase===phase).map(g=>gameCard(g,phase)).join('');
   });
 }
 
-// ── RENDER RESULTADOS ────────────────────────────────────────────────────
 function renderResultados() {
   const games = getGames();
   ['regular','final'].forEach(phase => {
-    const el = document.getElementById('res-' + phase);
-    if (!el) return;
-    const phaseGames = games.filter(g => g.phase === phase);
-    const anyPlayed = phaseGames.some(g => state.games[String(g.id)] !== undefined);
-    if (!anyPlayed) {
-      el.innerHTML = '<p style="color:var(--text-muted);font-size:.87rem;padding:.4rem 0">Ainda não há resultados registados.</p>';
+    const el = document.getElementById('res-'+phase); if(!el) return;
+    const phaseGames = games.filter(g=>g.phase===phase);
+    const anyPlayed = phaseGames.some(g=>state.games[String(g.id)]!==undefined);
+    if(!anyPlayed){
+      el.innerHTML='<p style="color:var(--text-muted);font-size:.87rem;padding:.4rem 0">Ainda não há resultados registados.</p>';
       return;
     }
     el.innerHTML = phaseGames.map(g => {
       const r = state.games[String(g.id)];
-      const lbl = g.label ? g.label : 'J' + g.id;
+      const lbl = g.label?g.label:'J'+g.id;
       return `<div class="game-card${r?' played':''}${g.phase==='final'?' final-game':''}">
         <div class="game-num">${lbl}</div>
         <div class="game-info">
           <div class="game-teams">${g.home} <span style="color:var(--text-muted);font-weight:400">vs</span> ${g.away}</div>
           <div class="game-when">${g.date} &middot; ${g.time}</div>
         </div>
-        ${r ? `<div class="game-result">${r.hg}&ndash;${r.ag}</div>` : '<div class="game-result tbd">Por jogar</div>'}
+        ${r?`<div class="game-result">${r.hg}&ndash;${r.ag}</div>`:'<div class="game-result tbd">Por jogar</div>'}
       </div>`;
     }).join('');
   });
 }
 
-// ── RENDER STANDINGS ─────────────────────────────────────────────────────
 function renderStandings() {
-  const rows = calcStandings();
-  document.getElementById('standings-body').innerHTML = rows.map((t,i) => {
-    const pos = i + 1;
+  document.getElementById('standings-body').innerHTML = calcStandings().map((t,i) => {
+    const pos=i+1;
     return `<tr>
       <td><span class="pos-badge pos-${pos}">${pos}</span>${t.name}</td>
       <td>${t.j}</td><td>${t.v}</td><td>${t.e}</td><td>${t.d}</td>
       <td>${t.gm}</td><td>${t.gs}</td>
-      <td>${t.dg > 0 ? '+' + t.dg : t.dg}</td>
+      <td>${t.dg>0?'+'+t.dg:t.dg}</td>
       <td class="pts">${t.pts}</td>
     </tr>`;
   }).join('');
 }
 
-// ── RENDER EQUIPAS ───────────────────────────────────────────────────────
 function renderEquipas() {
   const tabsEl = document.getElementById('team-tabs');
   const gridEl = document.getElementById('players-grid');
-  if (!tabsEl || !gridEl) return;
-
-  if (!tabsEl.children.length) {
-    tabsEl.innerHTML = TEAMS.map(t =>
+  if(!tabsEl||!gridEl) return;
+  if(!tabsEl.children.length)
+    tabsEl.innerHTML = TEAMS.map(t=>
       `<button class="team-tab${t===activeTeam?' active':''}" onclick="selectTeam('${t}',this)">${t}</button>`
     ).join('');
-  }
-
-  const players = (typeof teams !== 'undefined' && teams[activeTeam]) ? teams[activeTeam] : [];
-  const sorted = [...players].sort((a,b) => a.number - b.number);
-
-  if (!sorted.length) {
-    gridEl.innerHTML = '<p style="color:var(--text-muted);font-size:.87rem">Plantel não disponível.</p>';
-    return;
-  }
-
-  gridEl.innerHTML = sorted.map(p => `
+  const players = (typeof teams!=='undefined'&&teams[activeTeam])?teams[activeTeam]:[];
+  const sorted = [...players].sort((a,b)=>a.number-b.number);
+  if(!sorted.length){ gridEl.innerHTML='<p style="color:var(--text-muted)">Plantel não disponível.</p>'; return; }
+  gridEl.innerHTML = sorted.map(p=>`
     <div class="player-card">
       <div class="player-photo-wrap">
-        <img class="player-photo" src="${p.photo}" alt="${p.name}"
-          onerror="this.src='assets/default.png';this.onerror=null">
+        <img class="player-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='assets/default.png';this.onerror=null">
         <div class="player-number">${p.number}</div>
       </div>
       <div class="player-name">${p.name}</div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
-function selectTeam(name, btn) {
-  activeTeam = name;
-  document.querySelectorAll('.team-tab').forEach(b => b.classList.remove('active'));
+function selectTeam(name,btn){
+  activeTeam=name;
+  document.querySelectorAll('.team-tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderEquipas();
 }
 
-// ── RENDER ADMIN ─────────────────────────────────────────────────────────
 function renderAdmin() {
   const games = getGames();
   ['regular','final'].forEach(phase => {
-    const el = document.getElementById('edit-' + phase);
-    if (!el) return;
-    el.innerHTML = games.filter(g => g.phase === phase).map(g => {
-      const r = state.games[String(g.id)] || {};
-      const hv = r.hg !== undefined ? r.hg : '';
-      const av = r.ag !== undefined ? r.ag : '';
-      const lbl = g.label ? g.label : 'J' + g.id;
+    const el = document.getElementById('edit-'+phase); if(!el) return;
+    el.innerHTML = games.filter(g=>g.phase===phase).map(g=>{
+      const r = state.games[String(g.id)]||{};
+      const hv = r.hg!==undefined?r.hg:'', av = r.ag!==undefined?r.ag:'';
+      const lbl = g.label?g.label:'J'+g.id;
       return `<div class="edit-card" id="ecard-${g.id}">
         <div class="edit-card-top">
-          <div class="edit-card-label">
-            ${lbl} &mdash; ${g.home} vs ${g.away}
-            <small id="lbl-meta-${g.id}">${g.date} &middot; ${g.time}</small>
-          </div>
+          <div class="edit-card-label">${lbl} &mdash; ${g.home} vs ${g.away}
+            <small id="lbl-meta-${g.id}">${g.date} &middot; ${g.time}</small></div>
           <button class="edit-toggle" onclick="toggleMeta('${g.id}')">Editar jogo</button>
         </div>
         <div class="meta-edit" id="meta-${g.id}">
@@ -486,7 +677,7 @@ function renderAdmin() {
             <span>&ndash;</span>
             <input type="number" min="0" max="99" id="ag-${g.id}" value="${av}" placeholder="–">
           </div>
-          <div class="btn-row" style="margin-top:0">
+          <div class="btn-row">
             <button class="save-btn" onclick="doSave('${g.id}')">Guardar resultado</button>
             <button class="clear-btn" onclick="doClear('${g.id}')">Limpar</button>
           </div>
@@ -496,123 +687,105 @@ function renderAdmin() {
   });
 }
 
-function toggleMeta(id) {
-  const el = document.getElementById('meta-' + id);
+function toggleMeta(id){
+  const el=document.getElementById('meta-'+id);
   el.classList.toggle('open');
-  el.previousElementSibling.querySelector('.edit-toggle').textContent =
-    el.classList.contains('open') ? 'Fechar' : 'Editar jogo';
+  el.previousElementSibling.querySelector('.edit-toggle').textContent=
+    el.classList.contains('open')?'Fechar':'Editar jogo';
 }
-
-function saveMeta(id) {
-  const sid = String(id);
-  if (!state.gameOverrides) state.gameOverrides = {};
-  const base = DEFAULT_GAMES.find(g => String(g.id) === sid) || {};
-  state.gameOverrides[sid] = {
-    date:  document.getElementById('m-date-' + id).value.trim() || base.date,
-    time:  document.getElementById('m-time-' + id).value.trim() || base.time,
-    home:  document.getElementById('m-home-' + id).value.trim() || base.home,
-    away:  document.getElementById('m-away-' + id).value.trim() || base.away,
+function saveMeta(id){
+  const sid=String(id);
+  if(!state.gameOverrides) state.gameOverrides={};
+  const base=DEFAULT_GAMES.find(g=>String(g.id)===sid)||{};
+  state.gameOverrides[sid]={
+    date: document.getElementById('m-date-'+id).value.trim()||base.date,
+    time: document.getElementById('m-time-'+id).value.trim()||base.time,
+    home: document.getElementById('m-home-'+id).value.trim()||base.home,
+    away: document.getElementById('m-away-'+id).value.trim()||base.away,
   };
-  renderAll();
-  renderAdmin();
+  renderAll(); renderAdmin();
   showToast('Jogo atualizado!');
-  const meta = document.getElementById('meta-' + id);
-  if (meta) meta.classList.remove('open');
+  document.getElementById('meta-'+id).classList.remove('open');
 }
-
-function doSave(id) {
-  const hg = document.getElementById('hg-' + id).value;
-  const ag = document.getElementById('ag-' + id).value;
-  if (hg === '' || ag === '') { showToast('Preenche os dois campos!'); return; }
-  state.games[String(id)] = { hg: parseInt(hg), ag: parseInt(ag) };
-  renderAll();
-  showToast('Resultado guardado!');
+function doSave(id){
+  const hg=document.getElementById('hg-'+id).value, ag=document.getElementById('ag-'+id).value;
+  if(hg===''||ag===''){showToast('Preenche os dois campos!');return;}
+  state.games[String(id)]={hg:parseInt(hg),ag:parseInt(ag)};
+  renderAll(); showToast('Resultado guardado!');
 }
-
-function doClear(id) {
+function doClear(id){
   delete state.games[String(id)];
-  document.getElementById('hg-' + id).value = '';
-  document.getElementById('ag-' + id).value = '';
-  renderAll();
-  showToast('Resultado apagado.');
+  document.getElementById('hg-'+id).value='';
+  document.getElementById('ag-'+id).value='';
+  renderAll(); showToast('Resultado apagado.');
 }
 
-function downloadJSON() {
-  const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'results.json';
-  a.click();
-  URL.revokeObjectURL(a.href);
-  showToast('Download iniciado!');
+function downloadJSON(){
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='results.json'; a.click();
+  URL.revokeObjectURL(a.href); showToast('Download iniciado!');
+}
+async function saveToServer(){
+  const btn=document.getElementById('save-server-btn'), status=document.getElementById('save-status');
+  let plainPw=sessionStorage.getItem('dinamo_pw_plain')||'';
+  if(!plainPw){plainPw=prompt('Confirma a senha para publicar:'); if(!plainPw) return;}
+  btn.disabled=true; btn.textContent='A publicar...'; status.textContent='';
+  try{
+    const res=await fetch('save.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...state,_pw:plainPw})});
+    const json=await res.json();
+    if(json.ok){sessionStorage.setItem('dinamo_pw_plain',plainPw);status.textContent='✓ Publicado!';status.style.color='var(--g600)';showToast('Publicado no servidor!');}
+    else{status.textContent='✗ Erro: '+(json.error||'desconhecido');status.style.color='var(--red)';if(json.error==='Unauthorized')sessionStorage.removeItem('dinamo_pw_plain');}
+  }catch(e){status.textContent='✗ Não foi possível contactar o servidor.';status.style.color='var(--red)';}
+  btn.disabled=false; btn.textContent='☁ Publicar alterações';
 }
 
-// ── RENDER ALL ───────────────────────────────────────────────────────────
-function renderAll() {
-  renderAgenda();
-  renderResultados();
-  renderStandings();
-}
+function renderAll(){renderAgenda();renderResultados();renderStandings();}
 
-// ── NAV ──────────────────────────────────────────────────────────────────
-function showSection(s, btn) {
-  document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById('sec-' + s).classList.add('active');
+function showSection(s,btn){
+  document.querySelectorAll('.section').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));
+  document.getElementById('sec-'+s).classList.add('active');
   btn.classList.add('active');
-  if (s === 'resultados')    renderResultados();
-  else if (s === 'classificacao') renderStandings();
-  else if (s === 'agenda')   renderAgenda();
-  else if (s === 'equipas')  renderEquipas();
+  if(s==='resultados') renderResultados();
+  else if(s==='classificacao') renderStandings();
+  else if(s==='agenda') renderAgenda();
+  else if(s==='equipas') renderEquipas();
 }
 
-// ── AUTH ─────────────────────────────────────────────────────────────────
-async function hashPw(pw) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+async function hashPw(pw){
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
 }
-async function checkPw() {
-  const h = await hashPw(document.getElementById('pw-input').value);
-  if (h === ADMIN_HASH) {
-    document.getElementById('admin-gate').style.display = 'none';
+async function checkPw(){
+  const h=await hashPw(document.getElementById('pw-input').value);
+  if(h===ADMIN_HASH){
+    document.getElementById('admin-gate').style.display='none';
     document.getElementById('admin-panel').classList.add('visible');
     renderAdmin();
-  } else {
-    document.getElementById('pw-err').style.display = 'block';
-  }
+  } else { document.getElementById('pw-err').style.display='block'; }
 }
 
-// ── TOAST ─────────────────────────────────────────────────────────────────
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2400);
+function showToast(msg){
+  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2400);
 }
 
-// ── INTRO ─────────────────────────────────────────────────────────────────
+// INTRO
 (function(){
-  var DURATION = 6000;
-  var overlay = document.getElementById('intro-overlay');
-  var poster  = document.getElementById('intro-poster');
-  var msg     = document.getElementById('intro-msg');
-  var bar     = document.getElementById('intro-bar');
-  function closeIntro(){
-    overlay.classList.add('fade-out');
-    setTimeout(function(){ overlay.classList.add('gone'); }, 850);
-  }
-  window.closeIntro = closeIntro;
-  requestAnimationFrame(function(){
-    setTimeout(function(){ poster.classList.add('in'); }, 80);
-    setTimeout(function(){ msg.classList.add('in'); }, 600);
-    setTimeout(function(){
-      bar.style.transitionDuration = (DURATION - 800) + 'ms';
-      bar.style.width = '100%';
-    }, 820);
+  var D=6000, overlay=document.getElementById('intro-overlay'),
+      poster=document.getElementById('intro-poster'),
+      msg=document.getElementById('intro-msg'),
+      bar=document.getElementById('intro-bar');
+  function closeIntro(){overlay.classList.add('fade-out');setTimeout(()=>overlay.classList.add('gone'),850);}
+  window.closeIntro=closeIntro;
+  requestAnimationFrame(()=>{
+    setTimeout(()=>poster.classList.add('in'),80);
+    setTimeout(()=>msg.classList.add('in'),600);
+    setTimeout(()=>{bar.style.transitionDuration=(D-800)+'ms';bar.style.width='100%';},820);
   });
-  setTimeout(closeIntro, DURATION);
+  setTimeout(closeIntro,D);
 })();
 
-// ── INIT ──────────────────────────────────────────────────────────────────
 loadData();
 </script>
 </body>
