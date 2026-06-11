@@ -528,18 +528,17 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 async function sbFetch(method, body=null) {
   const base = SUPABASE_URL + '/rest/v1/torneio_results';
-  const url  = (method === 'GET' || method === 'PATCH')
-    ? base + '?id=eq.state'
-    : base;
-  const opts = {
-    method,
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
+  const url  = method === 'GET' ? base + '?select=games,game_overrides&id=eq.state' : base;
+  const headers = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': 'Bearer ' + SUPABASE_KEY,
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
   };
+  if (method === 'POST') {
+    headers['Prefer'] = 'resolution=merge-duplicates,return=minimal';
+  }
+  const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
   return fetch(url, opts);
 }
@@ -754,7 +753,8 @@ async function saveToServer(){
   const btn=document.getElementById('save-server-btn'), status=document.getElementById('save-status');
   btn.disabled=true; btn.textContent='A publicar...'; status.textContent='';
   try{
-    const res = await sbFetch('PATCH', {
+    const res = await sbFetch('POST', {
+      id: 'state',
       games: state.games,
       game_overrides: state.gameOverrides,
       updated_at: new Date().toISOString()
