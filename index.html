@@ -570,8 +570,13 @@ function getGames() {
 
 function calcStandings() {
   const games = getGames(), st = {};
+  // Critério 5: ordem de média de idades (menor = mais novo = melhor critério de desempate)
+  const AGE_ORDER = {'Sub-11B':0,'Sub-11A':1,'Sub-13':2,'Sub-15':3,'Sub-19':4};
+
   TEAMS.forEach(t => st[t]={j:0,v:0,e:0,d:0,gm:0,gs:0,pts:0});
-  games.filter(g => g.phase==='regular').forEach(g => {
+  const regularGames = games.filter(g => g.phase==='regular');
+
+  regularGames.forEach(g => {
     const r = state.games[String(g.id)]; if(!r) return;
     const h=g.home, a=g.away;
     if(!st[h]||!st[a]) return;
@@ -582,8 +587,47 @@ function calcStandings() {
     else if(r.hg<r.ag){st[a].v++;st[a].pts+=3;st[h].d++;}
     else{st[h].e++;st[h].pts++;st[a].e++;st[a].pts++;}
   });
-  return TEAMS.map(t=>({name:t,...st[t],dg:st[t].gm-st[t].gs}))
-    .sort((a,b)=>b.pts-a.pts||b.dg-a.dg||b.gm-a.gm);
+
+  const rows = TEAMS.map(t=>({name:t,...st[t],dg:st[t].gm-st[t].gs}));
+
+  // Função auxiliar: critérios 1 e 2 — confronto directo entre grupo de empatados
+  function directStats(group) {
+    // pts, dg e gm apenas nos jogos entre si
+    const ds = {};
+    group.forEach(t => ds[t] = {pts:0, dg:0, gm:0});
+    regularGames.forEach(g => {
+      const r = state.games[String(g.id)]; if(!r) return;
+      if(!group.includes(g.home) || !group.includes(g.away)) return;
+      const h=g.home, a=g.away;
+      ds[h].gm+=r.hg; ds[a].gm+=r.ag;
+      ds[h].dg+=(r.hg-r.ag); ds[a].dg+=(r.ag-r.hg);
+      if(r.hg>r.ag){ds[h].pts+=3;}
+      else if(r.hg<r.ag){ds[a].pts+=3;}
+      else{ds[h].pts++;ds[a].pts++;}
+    });
+    return ds;
+  }
+
+  rows.sort((a,b) => {
+    // Critério global: pontos
+    if(b.pts !== a.pts) return b.pts - a.pts;
+    // Desempate entre equipas com mesmo número de pontos
+    // (aplicado como comparação par-a-par; para grupo maior seria necessário sub-classificação,
+    //  mas para 2 equipas empatadas isto é correcto)
+    const ds = directStats([a.name, b.name]);
+    // Critério 1: pontos no confronto directo
+    if(ds[b.name].pts !== ds[a.name].pts) return ds[b.name].pts - ds[a.name].pts;
+    // Critério 2: diferença de golos no confronto directo
+    if(ds[b.name].dg !== ds[a.name].dg) return ds[b.name].dg - ds[a.name].dg;
+    // Critério 3: diferença de golos global
+    if(b.dg !== a.dg) return b.dg - a.dg;
+    // Critério 4: maior número de golos marcados
+    if(b.gm !== a.gm) return b.gm - a.gm;
+    // Critério 5: menor média de idades (Sub-11B < Sub-11A < Sub-13 < Sub-15 < Sub-19)
+    return AGE_ORDER[a.name] - AGE_ORDER[b.name];
+  });
+
+  return rows;
 }
 
 function gameCard(g, phase) {
