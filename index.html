@@ -731,17 +731,47 @@ function saveMeta(id){
   showToast('Jogo atualizado!');
   document.getElementById('meta-'+id).classList.remove('open');
 }
-function doSave(id){
+async function doSave(id){
   const hg=document.getElementById('hg-'+id).value, ag=document.getElementById('ag-'+id).value;
   if(hg===''||ag===''){showToast('Preenche os dois campos!');return;}
   state.games[String(id)]={hg:parseInt(hg),ag:parseInt(ag)};
-  renderAll(); showToast('Resultado guardado!');
+  renderAll();
+  showToast('A publicar...');
+  try{
+    const res = await sbFetch('POST', {
+      id: 'state',
+      games: state.games,
+      game_overrides: state.gameOverrides,
+      updated_at: new Date().toISOString()
+    });
+    if(res.ok){
+      showToast('✓ Resultado publicado!');
+    } else {
+      const txt = await res.text();
+      console.error('Supabase error:', res.status, txt);
+      showToast('✗ Erro ao publicar: ' + res.status);
+    }
+  }catch(e){
+    console.error('Save error:', e);
+    showToast('✗ Erro de ligação');
+  }
 }
-function doClear(id){
+async function doClear(id){
   delete state.games[String(id)];
   document.getElementById('hg-'+id).value='';
   document.getElementById('ag-'+id).value='';
-  renderAll(); showToast('Resultado apagado.');
+  renderAll();
+  showToast('A publicar...');
+  try{
+    const res = await sbFetch('POST', {
+      id: 'state',
+      games: state.games,
+      game_overrides: state.gameOverrides,
+      updated_at: new Date().toISOString()
+    });
+    if(res.ok){ showToast('✓ Resultado apagado e publicado!'); }
+    else { showToast('✗ Erro ao publicar: ' + res.status); }
+  }catch(e){ showToast('✗ Erro de ligação'); }
 }
 
 function downloadJSON(){
