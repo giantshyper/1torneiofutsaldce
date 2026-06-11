@@ -527,17 +527,19 @@ const SUPABASE_URL = 'https://nznjsjzhaquhjtrwxdlj.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56bmpzanpoYXF1aGp0cnd4ZGxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMTA3NzQsImV4cCI6MjA5Njc4Njc3NH0.v8BLUFgmHY2cplkXY1hoG3iUjQUskh-Jb72YVJClDok';
 
 async function sbFetch(method, body=null) {
+  const url = SUPABASE_URL + '/rest/v1/torneio_results' + (method==='GET' ? '?select=games,game_overrides&id=eq.state' : '');
   const opts = {
     method,
     headers: {
       'apikey': SUPABASE_KEY,
       'Authorization': 'Bearer ' + SUPABASE_KEY,
       'Content-Type': 'application/json',
-      'Prefer': method==='POST' ? 'resolution=merge-duplicates' : ''
+      'Accept': 'application/json',
+      'Prefer': method==='POST' ? 'resolution=merge-duplicates,return=minimal' : ''
     }
   };
   if (body) opts.body = JSON.stringify(body);
-  return fetch(SUPABASE_URL + '/rest/v1/torneio_results', opts);
+  return fetch(url, opts);
 }
 
 async function loadData() {
