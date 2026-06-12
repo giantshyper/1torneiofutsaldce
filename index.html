@@ -854,7 +854,56 @@ async function saveToServer(){
   btn.disabled=false; btn.textContent='☁ Publicar alterações';
 }
 
-function renderAll(){renderAgenda();renderResultados();renderStandings();}
+function autoFillFinalPhase() {
+  const games = getGames();
+  const regularGames = games.filter(g => g.phase === 'regular');
+  const allRegularPlayed = regularGames.every(g => state.games[String(g.id)] !== undefined);
+
+  if (allRegularPlayed) {
+    // All regular phase games played — fill MF1 and MF2 with real team names
+    const standings = calcStandings();
+    const p1 = standings[0].name; // 1st
+    const p2 = standings[1].name; // 2nd
+    const p3 = standings[2].name; // 3rd
+    const p4 = standings[3].name; // 4th
+
+    if (!state.gameOverrides) state.gameOverrides = {};
+
+    // Only auto-fill if still showing placeholder names
+    const mf1 = state.gameOverrides['MF1'] || {};
+    const mf2 = state.gameOverrides['MF2'] || {};
+
+    if (!mf1._locked) {
+      state.gameOverrides['MF1'] = { ...mf1, home: p1, away: p4, _locked: false };
+    }
+    if (!mf2._locked) {
+      state.gameOverrides['MF2'] = { ...mf2, home: p2, away: p3, _locked: false };
+    }
+  }
+
+  // Fill Final with winners of MF1 and MF2
+  const rMF1 = state.games['MF1'];
+  const rMF2 = state.games['MF2'];
+  const gMF1 = getGames().find(g => g.id === 'MF1');
+  const gMF2 = getGames().find(g => g.id === 'MF2');
+
+  if (rMF1 && gMF1) {
+    const winnerMF1 = rMF1.hg >= rMF1.ag ? gMF1.home : gMF1.away;
+    const fOv = state.gameOverrides['F'] || {};
+    if (!fOv._locked) {
+      state.gameOverrides['F'] = { ...fOv, home: winnerMF1 };
+    }
+  }
+  if (rMF2 && gMF2) {
+    const winnerMF2 = rMF2.hg >= rMF2.ag ? gMF2.home : gMF2.away;
+    const fOv = state.gameOverrides['F'] || {};
+    if (!fOv._locked) {
+      state.gameOverrides['F'] = { ...fOv, away: winnerMF2 };
+    }
+  }
+}
+
+function renderAll(){autoFillFinalPhase();renderAgenda();renderResultados();renderStandings();}
 
 function showSection(s,btn){
   document.querySelectorAll('.section').forEach(el=>el.classList.remove('active'));
