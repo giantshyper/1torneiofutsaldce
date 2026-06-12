@@ -4,7 +4,7 @@ const teams = {
     { number: 55, name: "Alexandre Lopes",    photo: "assets/sub11a/alexandre-lopes.jpg" },
     { number: 90, name: "Afonso Almeida",     photo: "assets/sub11a/afonso-almeida.jpg" },
     { number: 13, name: "Benjamin Bahia",     photo: "assets/sub11a/benjamin-bahia.jpg" },
-    { number: 15, name: "Davi Silva",         photo: "assets/sub11a/default.png" },
+    { number: 15, name: "Davi Silva",         photo: "assets/sub11a/davi-silva.jpg" },
     { number: 18, name: "Rodrigo José",       photo: "assets/sub11a/rodrigo-jose.jpg" },
     { number: 97, name: "Duarte Santos",      photo: "assets/sub11a/duarte-santos.jpg" },
     { number: 99, name: "Manuel Brito",       photo: "assets/sub11a/manuel-brito.jpg" },
