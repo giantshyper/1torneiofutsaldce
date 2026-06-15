@@ -720,14 +720,16 @@ function renderEquipas() {
   const players = (typeof teams!=='undefined'&&teams[activeTeam])?teams[activeTeam]:[];
   const sorted = [...players].sort((a,b)=>a.number-b.number);
   if(!sorted.length){ gridEl.innerHTML='<p style="color:var(--text-muted)">Plantel não disponível.</p>'; return; }
-  gridEl.innerHTML = sorted.map(p=>`
-    <div class="player-card">
+  gridEl.innerHTML = sorted.map(p=>{
+    const scale = p.photo && p.photo.includes('daniel-monteiro') ? 'style="transform:scale(1.2);transform-origin:top center;"' : '';
+    return `<div class="player-card">
       <div class="player-photo-wrap">
-        <img class="player-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='assets/default.png';this.onerror=null">
+        <img class="player-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='assets/default.png';this.onerror=null" ${scale}>
         <div class="player-number">${p.number}</div>
       </div>
       <div class="player-name">${p.name}</div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 function selectTeam(name,btn){
