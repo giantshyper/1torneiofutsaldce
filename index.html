@@ -565,11 +565,26 @@ async function loadData() {
   renderAll();
 }
 
+function parseGameDate(g) {
+  // Parse "19/06 (Sex)" + "19:30" into a sortable value
+  const dateMatch = g.date.match(/(\d{2})\/(\d{2})/);
+  const timeMatch = g.time.match(/(\d{2}):(\d{2})/);
+  if (!dateMatch || !timeMatch) return 0;
+  const day = parseInt(dateMatch[1]), month = parseInt(dateMatch[2]);
+  const hour = parseInt(timeMatch[1]), min = parseInt(timeMatch[2]);
+  return month * 100000 + day * 1000 + hour * 60 + min;
+}
+
 function getGames() {
-  return DEFAULT_GAMES.map(g => {
+  const games = DEFAULT_GAMES.map(g => {
     const ov = state.gameOverrides[String(g.id)];
     return ov ? {...g,...ov} : {...g};
   });
+  // Sort regular games chronologically; keep final games in original order
+  const regular = games.filter(g => g.phase === 'regular')
+    .sort((a, b) => parseGameDate(a) - parseGameDate(b));
+  const final = games.filter(g => g.phase === 'final');
+  return [...regular, ...final];
 }
 
 function calcStandings() {
