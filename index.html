@@ -504,7 +504,7 @@ footer img{width:32px;vertical-align:middle;margin-right:8px;opacity:.5}
 
 <div class="toast" id="toast"></div>
 
-<script src="players.js?v=6"></script>
+<script src="players.js?v=7"></script>
 <script>
 const DEFAULT_GAMES = [
   {id:1,  phase:'regular', date:'11/06 (Qui)', time:'18:30', home:'Sub-11A', away:'Sub-13'},
@@ -721,10 +721,9 @@ function renderEquipas() {
   const sorted = [...players].sort((a,b)=>a.number-b.number);
   if(!sorted.length){ gridEl.innerHTML='<p style="color:var(--text-muted)">Plantel não disponível.</p>'; return; }
   gridEl.innerHTML = sorted.map(p=>{
-    const scale = p.photo && p.photo.includes('daniel-monteiro') ? 'style="transform:scale(1.2);transform-origin:top center;"' : '';
     return `<div class="player-card">
       <div class="player-photo-wrap">
-        <img class="player-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='assets/default.png';this.onerror=null" ${scale}>
+        <img class="player-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='assets/default.png';this.onerror=null">
         <div class="player-number">${p.number}</div>
       </div>
       <div class="player-name">${p.name}</div>
