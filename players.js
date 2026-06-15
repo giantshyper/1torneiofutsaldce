@@ -32,7 +32,7 @@ const teams = {
     { number: 41, name: "Martim Cardoso",     photo: "assets/sub11b/martim-cardoso.jpg" },
     { number:  6, name: "Lourenço Jesus",     photo: "assets/sub11b/lourenco-rebelo-de-jesus.jpg" },
     { number:  8, name: "João Ferreira",      photo: "assets/sub11b/joao-ferreira-v2.jpg" },
-    { number: 84, name: "Daniel Monteiro",    photo: "assets/sub11b/daniel-monteiro-v3.jpg" },
+    { number: 84, name: "Daniel Monteiro",    photo: "assets/sub11b/daniel-monteiro-v4.jpg" },
     { number:  9, name: "José Pereira",       photo: "assets/sub11b/jose-miguel-pereira.jpg" }
   ],
   "Sub-13": [
