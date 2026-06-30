@@ -36,7 +36,7 @@ const teams = {
     { number:  9, name: "José Pereira",       photo: "assets/sub11b/jose-miguel-pereira.jpg" }
   ],
   "Sub-13": [
-    { number:  1, name: "Tiago Ribeiro",      photo: "assets/sub13/tiago-ribeiro.jpg" },
+    { number:  1, name: "Tiago Ribeiro",      photo: "assets/sub13/tiago-ribeiro-v2.jpg" },
     { number: 10, name: "Lucca Quintal",      photo: "assets/sub13/lucca-quintal.jpg" },
     { number: 16, name: "Leonardo Miranda",   photo: "assets/sub13/leonardo-miranda.jpg" },
     { number: 20, name: "D. Rebordão",        photo: "assets/sub13/dinis-rebordao-v2.jpg" },
@@ -48,7 +48,7 @@ const teams = {
     { number: 14, name: "Jota",               photo: "assets/sub13/joao-amaro.jpg" },
     { number: 21, name: "Salva",              photo: "assets/sub13/salvador-oliveira.jpg" },
     { number: 28, name: "Pedro C.",           photo: "assets/sub13/pedro-costa.jpg" },
-    { number: 30, name: "Sara",               photo: "assets/sub13/sara-pires.jpg" },
+    { number: 30, name: "Sara",               photo: "assets/sub13/sara-pires-v2.jpg" },
     { number:  4, name: "Lorenzo",            photo: "assets/sub13/lorenzo_dce.jpg" }
   ],
   "Sub-15": [
