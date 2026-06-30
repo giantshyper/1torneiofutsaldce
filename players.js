@@ -39,7 +39,7 @@ const teams = {
     { number:  1, name: "Tiago Ribeiro",      photo: "assets/sub13/tiago-ribeiro.jpg" },
     { number: 10, name: "Lucca Quintal",      photo: "assets/sub13/lucca-quintal.jpg" },
     { number: 16, name: "Leonardo Miranda",   photo: "assets/sub13/leonardo-miranda.jpg" },
-    { number: 20, name: "D. Rebordão",        photo: "assets/sub13/dinis-rebordao.jpg" },
+    { number: 20, name: "D. Rebordão",        photo: "assets/sub13/dinis-rebordao-v2.jpg" },
     { number: 33, name: "Kiko",               photo: "assets/sub13/francisco-salgueiro.jpg" },
     { number: 40, name: "Rodri C.",           photo: "assets/sub13/rodrigo-cardoso.jpg" },
     { number:  8, name: "Zi",                 photo: "assets/sub13/guilherme-amaro.jpg" },
